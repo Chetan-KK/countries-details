@@ -6,8 +6,6 @@ fetch("https://restcountries.com/v3.1/all", {
 }).then((Response) => Response.json())
     .then(response => {
 
-        console.log(response[233].languages);
-
         for (let i = 0; i < response.length; i++) {
 
             let country = document.createElement(`div`)
@@ -82,6 +80,25 @@ fetch("https://restcountries.com/v3.1/all", {
 
 
 
-searchBox.addEventListener(`input`, () => {
-    console.log(searchBox.value)
+searchBox.addEventListener(`keyup`, () => {
+    let country = document.querySelectorAll(`.country`)
+    let filter = searchBox.value.toUpperCase();
+
+    var namesForSearch = countryBox.getElementsByTagName(`h3`)
+
+    var inner, txtValue;
+
+    for (i = 0; i < namesForSearch.length; i++) {
+        inner = namesForSearch[i]
+        txtValue = inner.textContent || inner.innerText
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            country[i].style.display = "";
+        }
+        else {
+            country[i].style.display = "none";
+
+        }
+    }
+
 })
