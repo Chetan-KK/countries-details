@@ -5,13 +5,20 @@ fetch("https://restcountries.com/v3.1/all", {
     "method": "GET"
 }).then((Response) => Response.json())
     .then(response => {
-        console.log(response[233]);
+
+        console.log(response[233].languages);
+
         for (let i = 0; i < response.length; i++) {
+
             let country = document.createElement(`div`)
             country.setAttribute(`class`, `country`)
+
             let countryName = document.createElement(`h3`)
             countryName.innerText = (i + 1) + ") " + response[i].name.common;
+
             country.appendChild(countryName)
+
+
             if (response[i].coatOfArms.svg) {
                 let countryFlag = document.createElement(`img`)
                 countryFlag.setAttribute(`src`, response[i].coatOfArms.svg)
@@ -19,7 +26,6 @@ fetch("https://restcountries.com/v3.1/all", {
                 countryName.appendChild(countryFlag)
             }
 
-            // console.log(response[233].capital[0]);
 
             if (response[i].capital) {
 
@@ -28,6 +34,45 @@ fetch("https://restcountries.com/v3.1/all", {
                 country.appendChild(countryCapital)
             }
 
+
+            let countryMoreDetails = document.createElement(`div`)
+            countryMoreDetails.setAttribute(`class`, `countryMoreDetails`)
+
+            if (response[i].population) {
+
+                let countryPopulation = document.createElement(`h4`)
+                countryPopulation.innerText = "Population: " + response[i].population;
+                countryMoreDetails.appendChild(countryPopulation)
+            }
+
+            if (response[i].region) {
+
+                let countryregion = document.createElement(`h4`)
+                countryregion.innerText = "Region: " + response[i].region;
+                countryMoreDetails.appendChild(countryregion)
+            }
+
+            if (response[i].area) {
+
+                let countryarea = document.createElement(`h4`)
+                countryarea.innerHTML = "area: " + response[i].area + " KM<sup>2</sup>";
+                countryMoreDetails.appendChild(countryarea)
+            }
+
+            if (response[i].languages) {
+
+                let countrylanguages = document.createElement(`h4`)
+
+                for (let langs in response[i].languages) {
+                    countrylanguages.innerHTML = "languages: " + langs;
+                }
+
+
+                countryMoreDetails.appendChild(countrylanguages)
+            }
+
+
+            country.appendChild(countryMoreDetails)
             countryBox.appendChild(country)
         }
     })
