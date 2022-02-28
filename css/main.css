@@ -1,0 +1,31 @@
+.search{
+    text-align: center;
+}
+#searchBox{
+    width: 80vw;
+    padding: 10px;
+    
+}
+.country{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}
+.countryFlag{
+    margin: 0 10px;
+    width: 30px;
+}
+h3{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex: 1;
+    margin: 0;
+}
+h4{
+    margin: 0;
+}
