@@ -60,10 +60,14 @@ fetch("https://restcountries.com/v3.1/all", {
             if (response[i].languages) {
 
                 let countrylanguages = document.createElement(`h4`)
+                var allLanguages = "";
+                // console.log(typeof(response[i].languages));
+
 
                 for (let langs in response[i].languages) {
-                    countrylanguages.innerHTML = "languages: " + langs;
+                    allLanguages += response[i].languages[langs] + ", ";
                 }
+                countrylanguages.innerHTML = allLanguages;
 
 
                 countryMoreDetails.appendChild(countrylanguages)
