@@ -5,6 +5,7 @@ fetch("https://restcountries.com/v3.1/all", {
     "method": "GET"
 }).then((Response) => Response.json())
     .then(response => {
+        console.log(response[233].maps.googleMaps);
 
         for (let i = 0; i < response.length; i++) {
 
@@ -71,6 +72,12 @@ fetch("https://restcountries.com/v3.1/all", {
 
 
                 countryMoreDetails.appendChild(countrylanguages)
+            }
+
+            if (response[i].maps.googleMaps) {
+                let mapLink = document.createElement(`h4`)
+                mapLink.innerHTML = `Google Map: <a href="` + response[i].maps.googleMaps + `">` + response[i].maps.googleMaps + `</a>`;
+                countryMoreDetails.appendChild(mapLink)
             }
 
 
