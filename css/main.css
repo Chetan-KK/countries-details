@@ -38,4 +38,6 @@ h4{
     margin: 1vw;
     padding: 1vw;
     width: 100%;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }
