@@ -1,3 +1,10 @@
+:root{
+    --black:rgb(0, 0, 0);
+    --white:rgb(255, 255, 255);
+}
+body{
+    background-color: var(--white);
+}
 .search{
     text-align: center;
 }
@@ -5,10 +12,13 @@
     width: 80vw;
     padding: 1vw;
     margin: 1vw;
+    background-color: var(--white);
+
     
 }
 #box{
-    border: 1px solid black;
+    border: 1px solid var(--black);
+    color: var(--black);
 }
 .country{
     display: flex;
@@ -16,7 +26,7 @@
     /* flex-direction: column; */
     flex-wrap: wrap;
     padding: 1vw;
-    border: .2vw solid black;
+    border: .2vw solid var(--black);
     margin: 1vw;
 }
 .countryFlag{
@@ -34,7 +44,7 @@ h4{
     margin: 0;
 }
 .countryMoreDetails{
-    border: 1px solid black;
+    border: 1px solid var(--black);
     margin: 1vw;
     padding: 1vw;
     width: 100%;
