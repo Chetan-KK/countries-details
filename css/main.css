@@ -2,6 +2,10 @@
     --black:rgb(0, 0, 0);
     --white:rgb(255, 255, 255);
 }
+.dark-mode{
+    --black:rgb(255, 255, 255);
+    --white:rgb(0, 0, 0);
+}
 body{
     background-color: var(--white);
 }
@@ -13,12 +17,17 @@ body{
     padding: 1vw;
     margin: 1vw;
     background-color: var(--white);
-
+color: var(--black);
+border: 2px solid var(--black);
     
 }
 #box{
     border: 1px solid var(--black);
     color: var(--black);
+}
+.wait{
+    text-align: center;
+    margin: 20px;
 }
 .country{
     display: flex;
@@ -50,4 +59,16 @@ h4{
     width: 100%;
     overflow-x: hidden;
     overflow-wrap: break-word;
+}
+nav{
+    font-size: 2rem;
+    padding: 0 10px;
+    color: var(--black);
+}
+.logo{
+    display: inline;
+}
+.mode{
+    cursor: pointer;
+    float: right;
 }

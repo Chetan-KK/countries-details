@@ -10,11 +10,21 @@
     <link rel="icon" href="logo.png" type="image/icon type" />
 </head>
 
-<body>
+<body onload="load()">
+    <nav>
+        <div class="logo">country founder</div>
+        <div class="mode" id="toggle-theme-button">&#9790;</div>
+    </nav>
+    <hr>
     <div class="search">
         <input type="text" id="searchBox" name="search" placeholder="enter country name">
     </div>
-    <div id="box"></div>
+    <div id="box">
+        <div class="wait">
+            Wait For countries to Load
+
+    </div>
+</div>
 </body>
 <script src="js/main.js"></script>
 
