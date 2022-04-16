@@ -3,11 +3,25 @@
     --white:rgb(255, 255, 255);
 }
 .dark-mode{
-    --black:rgb(255, 255, 255);
-    --white:rgb(0, 0, 0);
+    --black:rgb(148, 148, 148);
+    --white:rgb(7, 7, 7);
+}
+::-webkit-scrollbar{
+    background-color: var(--white);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--black);
+    border-radius: 10px;
 }
 body{
     background-color: var(--white);
+}
+hr{
+    background-color: var(--black);
+    border-radius: 10px;
+    width: 90vw;
+    margin-top: 10px;
 }
 .search{
     text-align: center;
@@ -19,11 +33,13 @@ body{
     background-color: var(--white);
 color: var(--black);
 border: 2px solid var(--black);
+border-radius: 10px;
     
 }
 #box{
     border: 1px solid var(--black);
     color: var(--black);
+    border-radius: 10px;
 }
 .wait{
     text-align: center;
@@ -36,6 +52,7 @@ border: 2px solid var(--black);
     flex-wrap: wrap;
     padding: 1vw;
     border: .2vw solid var(--black);
+    border-radius: 10px;
     margin: 1vw;
 }
 .countryFlag{
@@ -54,7 +71,7 @@ h4{
 }
 .countryMoreDetails{
     border: 1px solid var(--black);
-    margin: 1vw;
+    margin: 1vw;border-radius: 10px;
     padding: 1vw;
     width: 100%;
     overflow-x: hidden;
